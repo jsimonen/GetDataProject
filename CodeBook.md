@@ -4,7 +4,7 @@ This file describes how run_analysis.R works, what data it operates on and produ
 
 ## Original data
 
-The code assumes that the original data is in a subfolder called *ACI HAR Dataset* and that the directory structure within is unchanged from the original zip file. The original data and the code book can be downloaded from
+The code assumes that the original data is in a subfolder called *ACI HAR Dataset* and that the directory structure within is unchanged from the original zip file. The original data, along with the original code book can be downloaded from
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
@@ -27,9 +27,9 @@ To run the file, first save it in a folder that contains the required data subfo
 source("run_analysis.R")
 ```
 
-## The process
+## The transformations
 
-The exact process to produce the tidy data set from the original data files is as follows:
+The exact process used by run_analysis.R to produce the tidy data set from the original data files is as follows:
 
 1. The code merges the training and the test sets to create one data set. This is done by rowbinding them as they share the same variables. Moreover, two extra columns are added, one for the subject who perfomed the measurement and one for the activity the subject was performing.
 2. The columns are given human-readable names. The variable names are extracted from *features.txt*.
@@ -43,4 +43,4 @@ The column names of the tidy data set come directly from the data file *features
 
 ## The output
 
-The tidy data set, obtained with the transformations described above, is saved as **ProjectData.txt** in a text format using `write.table()`
+The tidy data set, obtained with the transformations described above, is saved as **ProjectData.txt** in text format using `write.table()`
